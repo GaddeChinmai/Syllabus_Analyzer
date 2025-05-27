@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="courses.component.css">
+
+<div class="courses-page">
+  <h1>Welcome, {{ user?.name }} ({{ user?.role | titlecase }})!</h1>
+  <p>Select your courses below:</p>
+
+  <div class="courses-grid">
+    <div
+      class="course-card"
+      *ngFor="let course of courses"
+      [class.selected]="course.selected"
+      (click)="toggleSelection(course)"
+      (keydown.enter)="toggleSelection(course)"
+      (keydown.space)="toggleSelection(course)"
+      [title]="course.description"
+      tabindex="0"
+      role="button"
+      [attr.aria-pressed]="course.selected"
+    >
+      <div class="course-header">
+        <h3>{{ course.name }}</h3>
+        <span class="course-id">ID: {{ course.id }}</span>
+      </div>
+      <p class="description">{{ course.description }}</p>
+      <div class="tag">
+        {{ course.selected ? 'Selected' : 'Click to select' }}
+      </div>
+      <div class="checkmark" *ngIf="course.selected">&#10003;</div>
+    </div>
+  </div>
+
+  <p *ngIf="selectedCoursesCount > 0">
+    Selected courses: {{ selectedCoursesCount }}
+  </p>
+
+  <p *ngIf="errorMessage" class="error-message" style="color: red; margin-top: 10px;">
+    {{ errorMessage }}
+  </p>
+
+  <button (click)="saveSelections()" class="save-btn">
+    Save Selected Courses
+  </button>
+
+  <div *ngIf="hasSelectedCourses" class="selected-courses-list" style="margin-top: 20px;">
+    <h2>Your Selected Courses:</h2>
+    <ul>
+      <li *ngFor="let course of courses" [hidden]="!course.selected">
+        {{ course.name }} (ID: {{ course.id }})
+      </li>
+    </ul>
+  </div>
+</div>

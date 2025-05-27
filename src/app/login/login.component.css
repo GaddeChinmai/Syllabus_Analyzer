@@ -1,0 +1,123 @@
+/* Make the entire page background white */
+body {
+  background-color:thistle;
+  margin: 0; /* optional: remove default margin */
+  height: 100vh; /* ensure body fills viewport height */
+}
+
+/* Wrapper to center the login box */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Removed the gradient background */
+  background-color:white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* The login box */
+.login-box {
+  background-color:white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Heading */
+.login-box h2 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Input groups */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Font Awesome icon */
+.input-group .icon {
+  color: #555;
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+/* Inputs */
+.input-group input {
+  border: none;
+  outline: none;
+  flex: 1;
+  background: transparent;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #357ab8;
+}
+
+button:disabled {
+  background-color: #a0c1e8;
+  cursor: not-allowed;
+}
+
+/* Forgot password link */
+.forgot-link {
+  display: block;
+  margin: 10px 0;
+  font-size: 0.9rem;
+  color: blue;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer toggle link */
+.footer-link {
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+.footer-link a {
+  color: #4a90e2;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-link a:hover {
+  text-decoration: underline;
+}
+.input-group select {
+  border: none;
+  outline: none;
+  flex: 1;
+  background: transparent;
+  font-size: 1rem;
+  color: #333;
+}
+

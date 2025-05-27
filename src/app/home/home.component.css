@@ -1,0 +1,178 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fafafa;
+  color: #34495e;
+  line-height: 1.6;
+}
+
+/* Centered homepage container */
+.homepage {
+  background: #fff;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* Main Heading */
+.homepage h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+.homepage h1 span {
+  color: #2980b9;
+}
+.homepage h1 i {
+  margin-right: 12px;
+  color: #2980b9;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+.homepage h1 i:hover {
+  transform: rotate(15deg) scale(1.2);
+}
+
+/* Intro paragraph */
+.homepage p {
+  font-size: 1.15rem;
+  margin-bottom: 35px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #4a6274;
+}
+
+/* Feature boxes container - side by side */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: nowrap;
+  margin-bottom: 50px;
+}
+
+/* Each feature box */
+.feature {
+  background: #ecf0f1;
+  flex: 0 0 280px;
+  border-radius: 10px;
+  padding: 30px 25px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: default;
+  color: #34495e;
+}
+.feature:hover {
+  background-color: #d6eaf8;
+  transform: translateY(-8px);
+}
+.feature i {
+  font-size: 3.2rem;
+  color: #2980b9;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+.feature:hover i {
+  transform: rotate(15deg) scale(1.2);
+}
+.feature h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+.feature p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Centered About Project & Technology Stack sections */
+.about-project, .technology-stack {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  padding: 0 20px;
+  text-align: center;
+  color: #34495e;
+}
+.about-project h2, .technology-stack h2 {
+  color: #2980b9;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Lists inside About and Technology stack */
+.about-project ul, .technology-stack ul {
+  text-align: left;
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.about-project ul li, .technology-stack ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #4a6274;
+}
+
+/* Call To Action buttons */
+.cta {
+  text-align: center;
+  margin-top: 40px;
+}
+.cta a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 14px 40px;
+  border-radius: 30px;
+  margin: 0 12px;
+  box-shadow: 0 6px 15px rgba(41, 128, 185, 0.25);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+.btn-primary {
+  background-color: #2980b9;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #1c5980;
+  color: #dce6f1;
+}
+.btn-outline {
+  border: 2px solid #2980b9;
+  color: #2980b9;
+  background-color: transparent;
+}
+.btn-outline:hover {
+  background-color: #2980b9;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .features {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .feature {
+    flex: 0 1 90%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+  .about-project ul, .technology-stack ul {
+    text-align: center;
+    display: block;
+    padding-left: 0;
+  }
+  
+}

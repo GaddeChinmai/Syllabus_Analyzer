@@ -1,0 +1,134 @@
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+}
+
+/* General card style */
+section {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress bars */
+mat-progress-bar {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+/* Courses styling */
+.course-item {
+  margin-bottom: 16px;
+  padding: 8px;
+  border-left: 4px solid #2196f3;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.course-item:hover {
+  background-color: #e3f2fd;
+}
+
+/* Notification list */
+.notifications ul,
+.learning-material ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.notifications li,
+.learning-material li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.notifications li:hover,
+.learning-material li:hover {
+  background-color: #f1f1f1;
+}
+
+.notifications mat-icon,
+.learning-material mat-icon {
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.notifications li:hover mat-icon,
+.learning-material li:hover mat-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* AI Predictions Table */
+.ai-predictions table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.ai-predictions th,
+.ai-predictions td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.ai-predictions tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Risk level colors */
+.high-risk {
+  color: #d32f2f;
+  font-weight: 600;
+  animation: blinkHigh 1.5s infinite;
+}
+
+.medium-risk {
+  color: #fbc02d;
+  font-weight: 600;
+}
+
+.low-risk {
+  color: #388e3c;
+  font-weight: 600;
+}
+
+/* Blink animation for high risk */
+@keyframes blinkHigh {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Responsive tweak */
+@media (max-width: 600px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .course-item {
+    border-left-width: 3px;
+  }
+}

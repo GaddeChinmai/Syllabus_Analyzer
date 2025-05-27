@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<nav class="main-topnav">
+  <ul class="main-topnav-list">
+    <!-- Left: Logo -->
+    <li class="topnav-logo" (click)="handleTopNavClick('dashboard')">
+      <i class="fas fa-chart-line"></i> Syllabus Analyzer
+    </li>
+
+    <!-- Spacer -->
+    <li class="topnav-spacer"></li>
+
+    <!-- Right: Menu -->
+    <li class="topnav-item" (click)="handleTopNavClick('home')" style="cursor:pointer;">
+      <i class="fas fa-home"></i> Home
+    </li>
+    <li class="topnav-item" (click)="handleTopNavClick('notifications')" style="cursor:pointer;">
+      <i class="fas fa-bell"></i> Notifications
+    </li>
+    <li class="topnav-item" *ngIf="!isLoggedIn" (click)="handleTopNavClick('login')" style="cursor:pointer;">
+      <i class="fas fa-sign-in-alt"></i> Login
+    </li>
+    <li class="topnav-item" *ngIf="isLoggedIn" (click)="handleTopNavClick('profile')" style="cursor:pointer;">
+      <i class="fas fa-user-circle"></i> Profile
+    </li>
+    <li class="topnav-item" *ngIf="isLoggedIn" (click)="handleTopNavClick('logout')" style="cursor:pointer;">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </li>
+  </ul>
+</nav>

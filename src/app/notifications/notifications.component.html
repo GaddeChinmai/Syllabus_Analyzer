@@ -1,0 +1,24 @@
+<div class="notifications-container">
+  <h2><i class="fas fa-bell"></i> Notifications</h2>
+
+  <div *ngIf="notifications.length === 0" class="no-notifications">
+    No notifications available.
+  </div>
+
+  <ul *ngIf="notifications.length > 0" class="notifications-list">
+    <li *ngFor="let note of notifications" [class.read]="note.read" [class.unread]="!note.read">
+      <i [class]="getIcon(note.type)" aria-hidden="true"></i>
+
+      <div class="message-container">
+        <div class="message">{{ note.message }}</div>
+        <div class="popup">{{ note.detail }}</div>
+      </div>
+
+      <span class="timestamp">{{ note.createdAt | date: 'short' }}</span>
+
+      <button *ngIf="!note.read" (click)="markAsRead(note.id)" class="mark-read-btn" title="Mark as read">
+        <i class="fas fa-check"></i>
+      </button>
+    </li>
+  </ul>
+</div>

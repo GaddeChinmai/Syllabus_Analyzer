@@ -1,0 +1,21 @@
+<div class="courses-container">
+  <div *ngFor="let group of groupedTopicsByCourse" class="course-group" tabindex="0">
+    <h2>{{ group.course?.name }} ({{ group.course?.id }})</h2>
+    <ul>
+      <li 
+        *ngFor="let topic of group.topics"
+        [class.completed]="topic.completed"
+      >
+        <input 
+          type="checkbox" 
+          [checked]="topic.completed" 
+          (change)="toggleTopicCompletion(topic)" 
+        />
+        <span class="topic-title">{{ topic.title }}</span> - 
+        <small class="topic-desc">{{ topic.description }}</small>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<button (click)="saveTopics()" class="save-button">Save Topics</button>

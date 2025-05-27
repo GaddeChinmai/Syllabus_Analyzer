@@ -1,0 +1,80 @@
+<div class="dashboard-container" *ngIf="user; else notLoggedIn">
+  <!-- User Welcome -->
+  <section class="user-info">
+    <h1>Welcome, {{ user.username }}!</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Role: {{ user.role }}</p>
+  </section>
+
+  <!-- Courses Section -->
+  <section class="courses">
+    <h2>Your Courses</h2>
+    <div *ngIf="courses.length; else noCourses">
+      <div *ngFor="let course of courses" class="course-item">
+        <h3>{{ course.name }}</h3>
+        <mat-progress-bar [value]="getCourseProgress(course)"></mat-progress-bar>
+        <p>{{ course.topicsCompleted }} / {{ course.totalTopics }} topics completed</p>
+      </div>
+    </div>
+    <ng-template #noCourses>
+      <p>No courses assigned.</p>
+    </ng-template>
+  </section>
+
+  <!-- Notifications Section -->
+  <section class="notifications">
+    <h2>Notifications</h2>
+    <ul>
+      <li *ngFor="let note of notifications">
+        <mat-icon>notifications</mat-icon> {{ note }}
+      </li>
+    </ul>
+  </section>
+
+  <!-- Learning Materials Section -->
+  <section class="learning-material">
+    <h2>Materials</h2>
+    <ul>
+      <li *ngFor="let mat of materials">
+        <mat-icon>menu_book</mat-icon> {{ mat.title }}
+      </li>
+    </ul>
+  </section>
+
+  <!-- AI Predictions Section -->
+  <section class="ai-predictions">
+    <h2>AI Predictions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Risk Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let prediction of aiPredictions"
+          [ngClass]="{
+            'high-risk': prediction.riskLevel === 'High',
+            'medium-risk': prediction.riskLevel === 'Medium',
+            'low-risk': prediction.riskLevel === 'Low'
+          }"
+        >
+          <td>{{ prediction.description }}</td>
+          <td>{{ prediction.riskLevel }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<ng-template #notLoggedIn>
+  <section class="default-dashboard">
+    <h1>Welcome to Smart Syllabus Tracker</h1>
+    <p>
+      Track your syllabus coverage, get AI predictions, and manage your courses —
+      sign in to personalize your experience.
+    </p>
+    <button class="btn-login" (click)="goToLogin()">Login</button>
+  </section>
+</ng-template>

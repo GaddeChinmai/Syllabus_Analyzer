@@ -1,0 +1,16 @@
+<div class="container">
+  <h2 class="title">Course Materials</h2>
+
+  <div class="materials-grid">
+    <div class="material-card" *ngFor="let material of materials">
+      <h3>{{ material.name | titlecase }}</h3>
+      <p><strong>Type:</strong> {{ material.type }}</p>
+      <p *ngIf="material.description">{{ material.description }}</p>
+      <p>
+        <a [href]="material.youtube" target="_blank" rel="noopener">YouTube</a> |
+        <a [href]="material.w3schools" target="_blank" rel="noopener">W3Schools</a> |
+        <a [href]="material.geeksforgeeks" target="_blank" rel="noopener">GeeksforGeeks</a>
+      </p>
+    </div>
+  </div>
+</div>

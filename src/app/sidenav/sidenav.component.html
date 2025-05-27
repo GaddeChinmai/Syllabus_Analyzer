@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="sidenav.component.css">
+<nav class="sidebar">
+  <ul class="nav-list">
+   <li class="nav-item">
+<a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <i class="fas fa-tachometer-alt"></i> Dashboard
+  </a>
+</li>
+    <li class="nav-item">
+      <a routerLink="/courses" routerLinkActive="active">
+        <i class="fas fa-graduation-cap"></i> Courses
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/syllabus" routerLinkActive="active">
+        <i class="fas fa-list-ul"></i> Syllabus Topics
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/materials" routerLinkActive="active">
+        <i class="fas fa-book-open"></i> Materials
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/user-progress" routerLinkActive="active">
+        <i class="fas fa-chart-line"></i> User Progress
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/ai-predictions" routerLinkActive="active">
+        <i class="fas fa-brain"></i> AI Predictions
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/progress-history" routerLinkActive="active">
+        <i class="fas fa-history"></i> Progress History
+      </a>
+    </li>
+  </ul>
+</nav>

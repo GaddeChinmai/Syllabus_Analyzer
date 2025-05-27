@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>User Progress Tracker</h1>
+
+  <div class="progress-bar">
+    <div class="progress-fill" [style.width.%]="progressPercent"></div>
+  </div>
+  <p>{{completedCount}} / {{courses.length}} courses completed ({{progressPercent | number:'1.0-0'}}%)</p>
+
+  <div class="course-list">
+    <div class="course" *ngFor="let course of courses">
+      <input type="checkbox" [(ngModel)]="course.completed" id="{{course.id}}" />
+      <label for="{{course.id}}">
+        <strong>{{course.name}}</strong>: {{course.description}}
+      </label>
+    </div>
+  </div>
+</div>

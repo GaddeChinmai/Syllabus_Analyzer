@@ -1,0 +1,102 @@
+/* Sidebar container */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: steelblue; /* Deep violet-gray */
+  color: #e5eaf5; /* Light muted lavender */
+  box-shadow: 2px 0 8px rgba(125, 133, 208, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+/* Navigation list */
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each nav item */
+.nav-item {
+  margin-bottom: 15px;
+}
+
+/* Links inside nav items */
+.nav-item a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  color: #e5eaf5;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-left: 4px solid transparent;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Hover effect on links */
+.nav-item a:hover {
+  background-color: #50527a; /* Lighter violet */
+  color: #b9bfff; /* Soft bluish-lavender */
+  border-left-color: #b9bfff;
+}
+
+/* Active link style */
+.nav-item a.active {
+  background-color: #b9bfff;
+  color: #2c2e45; /* Dark background text */
+  border-left-color: #9aa7ff;
+  font-weight: 600;
+  box-shadow: inset 5px 0 15px rgba(185, 191, 255, 0.35);
+}
+
+/* Hover underline animation on links */
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  left: 30px;
+  bottom: 8px;
+  width: 0;
+  height: 2px;
+  background: #b9bfff;
+  transition: width 0.3s ease;
+  border-radius: 1px;
+}
+
+.nav-item a:hover::after {
+  width: calc(100% - 60px);
+}
+
+/* Icon style */
+.nav-item a i {
+  width: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Responsive: collapse sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .nav-item a {
+    padding: 15px 15px;
+    justify-content: center;
+  }
+
+  .nav-item a::after {
+    display: none;
+  }
+
+  /* Optionally hide text on small screens */
+  /* .nav-item a span {
+    display: none;
+  } */
+}

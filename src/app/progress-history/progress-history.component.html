@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>User Progress History</h2>
+
+  <input
+    type="text"
+    [(ngModel)]="newProgress"
+    placeholder="Enter progress update"
+    (keyup.enter)="addProgress()"
+  />
+  <button (click)="addProgress()">Add Progress</button>
+
+  <div class="progress-bar-container" aria-label="Progress bar">
+    <div class="progress-bar" [style.width.%]="progressPercent"></div>
+    <span class="progress-text">{{ progressHistory.length }} / {{ maxEntries }}</span>
+  </div>
+
+  <ul>
+    <li *ngFor="let entry of progressHistory; let i = index">
+      {{ i + 1 }}. {{ entry }}
+    </li>
+  </ul>
+</div>
